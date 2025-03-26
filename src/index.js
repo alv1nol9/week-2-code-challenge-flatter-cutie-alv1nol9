@@ -43,3 +43,13 @@
  voteCount.textContent =character.votes 
 }
 
+document.getElementById("votes-form").addEventListener("submit",(event)=>{
+ event.preventDefault()
+ const votesInput = document.getElementById("votes")
+const voteCount = document.getElementById("vote-count")
+
+let newVotes= parseInt(votesInput.value)||0
+ votesInput.textContent=parseInt(voteCount.textContent)+newVotes 
+
+votesInput.value=""
+})
