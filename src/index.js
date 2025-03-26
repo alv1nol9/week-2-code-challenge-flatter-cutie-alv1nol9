@@ -53,3 +53,25 @@ let newVotes= parseInt(votesInput.value)||0
 
 votesInput.value=""
 })
+
+const voteForm = document.getElementById("votes-form");
+
+voteForm.addEventListener("submit", (event) => {
+event.preventDefault();
+
+const votesInput = parseInt(document.getElementById("votes").value) || 0;
+const currentVotes = parseInt(voteCountElement.textContent);
+const updatedVotes = currentVotes + votesInput;
+
+voteCountElement.textContent = updatedVotes;
+
+
+fetch(`${baseUrl}/${selectedCharacter.id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ votes: updatedVotes })
+})
+.catch(err => console.error("Error updating votes:", err));
+
+event.target.reset(); 
+});                                     
