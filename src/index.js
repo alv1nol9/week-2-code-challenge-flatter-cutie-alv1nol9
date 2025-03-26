@@ -32,3 +32,9 @@
  //>>>>>>done fetching
  
  // display character details
+ function showCharacterDetails(character){
+    const name=document.getElementById("name")
+    const image = document.getElementById("image")
+    const voteCount = document.getElementById("vote-count")
+ //updating 
+ git 
