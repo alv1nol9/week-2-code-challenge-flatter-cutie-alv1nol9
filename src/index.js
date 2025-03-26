@@ -37,4 +37,9 @@
     const image = document.getElementById("image")
     const voteCount = document.getElementById("vote-count")
  //updating 
- git 
+ name.textContent=character.name
+ image.src=character.image
+ image.alt=character.name
+ voteCount.textContent =character.votes 
+}
+
